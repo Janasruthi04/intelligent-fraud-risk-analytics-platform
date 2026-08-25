@@ -1,0 +1,32 @@
+{
+  "total_records": 100800,
+  "valid_records": 99301,
+  "invalid_records": 1499,
+  "quality_score_pct": 98.51,
+  "checks": {
+    "transaction_id_not_null": {
+      "description": "transaction_id must not be NULL",
+      "failures": 0,
+      "passed": true
+    },
+    "transaction_amount_positive": {
+      "description": "transaction_amount must be > 0 and numeric",
+      "failures": 303,
+      "passed": false
+    },
+    "customer_id_present": {
+      "description": "customer_id must exist (not NULL)",
+      "failures": 403,
+      "passed": false
+    },
+    "duplicate_transaction_rate": {
+      "description": "duplicate transaction_id rate must be < 2%",
+      "failures": 800,
+      "rate_pct": 0.794,
+      "passed": true
+    }
+  },
+  "missing_customer_id_count": 403,
+  "duplicate_record_count": 800,
+  "bad_amount_count": 303
+}

@@ -1,0 +1,3051 @@
+{
+  "overview": {
+    "total_transactions": 99301,
+    "fraud_transactions": 5659,
+    "fraud_rate_pct": 5.699,
+    "high_risk_transactions": 5659,
+    "medium_risk_transactions": 46332,
+    "low_risk_transactions": 47310,
+    "average_transaction_amount": 698.35,
+    "total_risk_alerts": 500
+  },
+  "model_metrics": {
+    "logistic_regression": {
+      "accuracy": 0.874,
+      "precision": 0.0705,
+      "recall": 0.6075,
+      "f1_score": 0.1263,
+      "roc_auc": 0.7939,
+      "confusion_matrix": [
+        [
+          21473,
+          2981
+        ],
+        [
+          146,
+          226
+        ]
+      ]
+    },
+    "random_forest": {
+      "accuracy": 0.9596,
+      "precision": 0.1561,
+      "recall": 0.3844,
+      "f1_score": 0.222,
+      "roc_auc": 0.7816,
+      "confusion_matrix": [
+        [
+          23681,
+          773
+        ],
+        [
+          229,
+          143
+        ]
+      ]
+    },
+    "best_model": "logistic_regression"
+  },
+  "data_quality": {
+    "total_records": 100800,
+    "valid_records": 99301,
+    "invalid_records": 1499,
+    "quality_score_pct": 98.51,
+    "checks": {
+      "transaction_id_not_null": {
+        "description": "transaction_id must not be NULL",
+        "failures": 0,
+        "passed": true
+      },
+      "transaction_amount_positive": {
+        "description": "transaction_amount must be > 0 and numeric",
+        "failures": 303,
+        "passed": false
+      },
+      "customer_id_present": {
+        "description": "customer_id must exist (not NULL)",
+        "failures": 403,
+        "passed": false
+      },
+      "duplicate_transaction_rate": {
+        "description": "duplicate transaction_id rate must be < 2%",
+        "failures": 800,
+        "rate_pct": 0.794,
+        "passed": true
+      }
+    },
+    "missing_customer_id_count": 403,
+    "duplicate_record_count": 800,
+    "bad_amount_count": 303
+  },
+  "top_customers": [
+    {
+      "customer_id": "C001941",
+      "total_transactions": 36,
+      "avg_amount": 1153.8508333333332,
+      "max_amount": 4095.82,
+      "avg_fraud_probability": 0.44547499999999995,
+      "devices_used": [
+        "D000134",
+        "D000138",
+        "D000191",
+        "D000198",
+        "D000297"
+      ],
+      "merchants_used": [
+        "M00001",
+        "M00019",
+        "M00065",
+        "M00066",
+        "M00087"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chandigarh",
+        "chennai",
+        "delhi"
+      ],
+      "high_risk_txn_count": 8,
+      "risk_score": 44.55
+    },
+    {
+      "customer_id": "C000630",
+      "total_transactions": 38,
+      "avg_amount": 1193.76,
+      "max_amount": 10935.57,
+      "avg_fraud_probability": 0.4443763157894736,
+      "devices_used": [
+        "D000079",
+        "D000157",
+        "D000181",
+        "D000254",
+        "D000262"
+      ],
+      "merchants_used": [
+        "M00007",
+        "M00012",
+        "M00056",
+        "M00076",
+        "M00094"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chandigarh",
+        "chennai",
+        "delhi"
+      ],
+      "high_risk_txn_count": 7,
+      "risk_score": 44.44
+    },
+    {
+      "customer_id": "C000123",
+      "total_transactions": 33,
+      "avg_amount": 742.0081818181818,
+      "max_amount": 3495.0,
+      "avg_fraud_probability": 0.4390121212121212,
+      "devices_used": [
+        "D000138",
+        "D000152",
+        "D000226",
+        "D000353",
+        "D000406"
+      ],
+      "merchants_used": [
+        "M00008",
+        "M00031",
+        "M00050",
+        "M00059",
+        "M00061"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chandigarh",
+        "chennai",
+        "delhi"
+      ],
+      "high_risk_txn_count": 7,
+      "risk_score": 43.9
+    },
+    {
+      "customer_id": "C000001",
+      "total_transactions": 35,
+      "avg_amount": 718.2437142857143,
+      "max_amount": 3097.19,
+      "avg_fraud_probability": 0.43658285714285716,
+      "devices_used": [
+        "D000118",
+        "D000180",
+        "D000204",
+        "D000237",
+        "D000353"
+      ],
+      "merchants_used": [
+        "M00079",
+        "M00099",
+        "M00147",
+        "M00149",
+        "M00186"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chennai",
+        "delhi",
+        "hyderabad"
+      ],
+      "high_risk_txn_count": 7,
+      "risk_score": 43.66
+    },
+    {
+      "customer_id": "C000976",
+      "total_transactions": 33,
+      "avg_amount": 1033.759696969697,
+      "max_amount": 4848.86,
+      "avg_fraud_probability": 0.43294848484848486,
+      "devices_used": [
+        "D000009",
+        "D000029",
+        "D000030",
+        "D000033",
+        "D000061"
+      ],
+      "merchants_used": [
+        "M00023",
+        "M00046",
+        "M00049",
+        "M00080",
+        "M00186"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chandigarh",
+        "chennai",
+        "delhi"
+      ],
+      "high_risk_txn_count": 7,
+      "risk_score": 43.29
+    },
+    {
+      "customer_id": "C000281",
+      "total_transactions": 39,
+      "avg_amount": 1221.7228205128206,
+      "max_amount": 6205.0,
+      "avg_fraud_probability": 0.43084102564102567,
+      "devices_used": [
+        "D000189",
+        "D000194",
+        "D000222",
+        "D000224",
+        "D000237"
+      ],
+      "merchants_used": [
+        "M00012",
+        "M00023",
+        "M00037",
+        "M00044",
+        "M00075"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chandigarh",
+        "chennai",
+        "delhi"
+      ],
+      "high_risk_txn_count": 6,
+      "risk_score": 43.08
+    },
+    {
+      "customer_id": "C000535",
+      "total_transactions": 47,
+      "avg_amount": 760.204255319149,
+      "max_amount": 3410.95,
+      "avg_fraud_probability": 0.4288021276595745,
+      "devices_used": [
+        "D000004",
+        "D000014",
+        "D000037",
+        "D000081",
+        "D000194"
+      ],
+      "merchants_used": [
+        "M00000",
+        "M00006",
+        "M00013",
+        "M00020",
+        "M00048"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chandigarh",
+        "chennai",
+        "delhi"
+      ],
+      "high_risk_txn_count": 6,
+      "risk_score": 42.88
+    },
+    {
+      "customer_id": "C000540",
+      "total_transactions": 42,
+      "avg_amount": 953.3769047619048,
+      "max_amount": 7260.0,
+      "avg_fraud_probability": 0.4251642857142857,
+      "devices_used": [
+        "D000006",
+        "D000048",
+        "D000084",
+        "D000115",
+        "D000177"
+      ],
+      "merchants_used": [
+        "M00001",
+        "M00030",
+        "M00052",
+        "M00085",
+        "M00089"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chandigarh",
+        "chennai",
+        "delhi"
+      ],
+      "high_risk_txn_count": 6,
+      "risk_score": 42.52
+    },
+    {
+      "customer_id": "C002000",
+      "total_transactions": 38,
+      "avg_amount": 772.1328947368422,
+      "max_amount": 4245.47,
+      "avg_fraud_probability": 0.42425526315789475,
+      "devices_used": [
+        "D000060",
+        "D000169",
+        "D000172",
+        "D000255",
+        "D000259"
+      ],
+      "merchants_used": [
+        "M00032",
+        "M00084",
+        "M00085",
+        "M00111",
+        "M00115"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chandigarh",
+        "chennai",
+        "delhi"
+      ],
+      "high_risk_txn_count": 8,
+      "risk_score": 42.43
+    },
+    {
+      "customer_id": "C000076",
+      "total_transactions": 31,
+      "avg_amount": 1091.0145161290322,
+      "max_amount": 7714.0,
+      "avg_fraud_probability": 0.4236483870967742,
+      "devices_used": [
+        "D000077",
+        "D000089",
+        "D000100",
+        "D000128",
+        "D000172"
+      ],
+      "merchants_used": [
+        "M00036",
+        "M00038",
+        "M00042",
+        "M00048",
+        "M00057"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chandigarh",
+        "chennai",
+        "delhi"
+      ],
+      "high_risk_txn_count": 6,
+      "risk_score": 42.36
+    },
+    {
+      "customer_id": "C001923",
+      "total_transactions": 38,
+      "avg_amount": 1261.066052631579,
+      "max_amount": 15118.0,
+      "avg_fraud_probability": 0.4221552631578947,
+      "devices_used": [
+        "D000036",
+        "D000062",
+        "D000074",
+        "D000098",
+        "D000204"
+      ],
+      "merchants_used": [
+        "M00001",
+        "M00023",
+        "M00031",
+        "M00063",
+        "M00119"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chandigarh",
+        "chennai",
+        "delhi"
+      ],
+      "high_risk_txn_count": 5,
+      "risk_score": 42.22
+    },
+    {
+      "customer_id": "C001276",
+      "total_transactions": 39,
+      "avg_amount": 682.6920512820514,
+      "max_amount": 3438.63,
+      "avg_fraud_probability": 0.42034102564102566,
+      "devices_used": [
+        "D000007",
+        "D000057",
+        "D000076",
+        "D000121",
+        "D000210"
+      ],
+      "merchants_used": [
+        "M00035",
+        "M00040",
+        "M00065",
+        "M00095",
+        "M00147"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chandigarh",
+        "chennai",
+        "delhi"
+      ],
+      "high_risk_txn_count": 6,
+      "risk_score": 42.03
+    },
+    {
+      "customer_id": "C002398",
+      "total_transactions": 39,
+      "avg_amount": 848.7502564102565,
+      "max_amount": 7867.0,
+      "avg_fraud_probability": 0.42019487179487175,
+      "devices_used": [
+        "D000092",
+        "D000125",
+        "D000224",
+        "D000231",
+        "D000233"
+      ],
+      "merchants_used": [
+        "M00021",
+        "M00074",
+        "M00081",
+        "M00083",
+        "M00086"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chandigarh",
+        "chennai",
+        "delhi"
+      ],
+      "high_risk_txn_count": 7,
+      "risk_score": 42.02
+    },
+    {
+      "customer_id": "C002030",
+      "total_transactions": 39,
+      "avg_amount": 1073.0433333333333,
+      "max_amount": 4795.31,
+      "avg_fraud_probability": 0.41944358974358975,
+      "devices_used": [
+        "D000016",
+        "D000095",
+        "D000117",
+        "D000153",
+        "D000223"
+      ],
+      "merchants_used": [
+        "M00050",
+        "M00059",
+        "M00067",
+        "M00105",
+        "M00145"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chandigarh",
+        "chennai",
+        "delhi"
+      ],
+      "high_risk_txn_count": 6,
+      "risk_score": 41.94
+    },
+    {
+      "customer_id": "C000951",
+      "total_transactions": 32,
+      "avg_amount": 1103.7784375,
+      "max_amount": 7883.22,
+      "avg_fraud_probability": 0.41913125,
+      "devices_used": [
+        "D000021",
+        "D000172",
+        "D000259",
+        "D000276",
+        "D000296"
+      ],
+      "merchants_used": [
+        "M00033",
+        "M00106",
+        "M00138",
+        "M00168",
+        "M00170"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "chandigarh",
+        "chennai",
+        "delhi",
+        "hyderabad"
+      ],
+      "high_risk_txn_count": 3,
+      "risk_score": 41.91
+    },
+    {
+      "customer_id": "C002080",
+      "total_transactions": 45,
+      "avg_amount": 1036.9853333333335,
+      "max_amount": 5445.0,
+      "avg_fraud_probability": 0.41914,
+      "devices_used": [
+        "D000025",
+        "D000064",
+        "D000150",
+        "D000200",
+        "D000328"
+      ],
+      "merchants_used": [
+        "M00014",
+        "M00055",
+        "M00078",
+        "M00127",
+        "M00143"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chennai",
+        "delhi",
+        "hyderabad"
+      ],
+      "high_risk_txn_count": 7,
+      "risk_score": 41.91
+    },
+    {
+      "customer_id": "C002467",
+      "total_transactions": 37,
+      "avg_amount": 840.5732432432433,
+      "max_amount": 3929.84,
+      "avg_fraud_probability": 0.417945945945946,
+      "devices_used": [
+        "D000006",
+        "D000058",
+        "D000065",
+        "D000206",
+        "D000259"
+      ],
+      "merchants_used": [
+        "M00020",
+        "M00031",
+        "M00041",
+        "M00051",
+        "M00059"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chandigarh",
+        "chennai",
+        "delhi"
+      ],
+      "high_risk_txn_count": 5,
+      "risk_score": 41.79
+    },
+    {
+      "customer_id": "C001663",
+      "total_transactions": 37,
+      "avg_amount": 900.2867567567567,
+      "max_amount": 2697.46,
+      "avg_fraud_probability": 0.41734054054054054,
+      "devices_used": [
+        "D000030",
+        "D000034",
+        "D000045",
+        "D000135",
+        "D000186"
+      ],
+      "merchants_used": [
+        "M00034",
+        "M00039",
+        "M00104",
+        "M00130",
+        "M00136"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chandigarh",
+        "chennai",
+        "delhi"
+      ],
+      "high_risk_txn_count": 4,
+      "risk_score": 41.73
+    },
+    {
+      "customer_id": "C000343",
+      "total_transactions": 39,
+      "avg_amount": 984.4361538461538,
+      "max_amount": 3436.49,
+      "avg_fraud_probability": 0.41675641025641025,
+      "devices_used": [
+        "D000007",
+        "D000034",
+        "D000041",
+        "D000111",
+        "D000153"
+      ],
+      "merchants_used": [
+        "M00009",
+        "M00014",
+        "M00025",
+        "M00028",
+        "M00039"
+      ],
+      "locations_used": [
+        "bengaluru",
+        "chandigarh",
+        "chennai",
+        "delhi",
+        "hyderabad"
+      ],
+      "high_risk_txn_count": 5,
+      "risk_score": 41.68
+    },
+    {
+      "customer_id": "C001936",
+      "total_transactions": 40,
+      "avg_amount": 868.2909999999999,
+      "max_amount": 5295.93,
+      "avg_fraud_probability": 0.41683250000000005,
+      "devices_used": [
+        "D000043",
+        "D000056",
+        "D000125",
+        "D000131",
+        "D000160"
+      ],
+      "merchants_used": [
+        "M00002",
+        "M00008",
+        "M00024",
+        "M00045",
+        "M00046"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chandigarh",
+        "chennai",
+        "delhi"
+      ],
+      "high_risk_txn_count": 5,
+      "risk_score": 41.68
+    },
+    {
+      "customer_id": "C001459",
+      "total_transactions": 35,
+      "avg_amount": 1015.2937142857143,
+      "max_amount": 5533.4,
+      "avg_fraud_probability": 0.4166742857142857,
+      "devices_used": [
+        "D000165",
+        "D000221",
+        "D000291",
+        "D000301",
+        "D000361"
+      ],
+      "merchants_used": [
+        "M00039",
+        "M00046",
+        "M00084",
+        "M00089",
+        "M00159"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chennai",
+        "delhi",
+        "hyderabad"
+      ],
+      "high_risk_txn_count": 5,
+      "risk_score": 41.67
+    },
+    {
+      "customer_id": "C000493",
+      "total_transactions": 32,
+      "avg_amount": 949.675625,
+      "max_amount": 6169.0,
+      "avg_fraud_probability": 0.4165375,
+      "devices_used": [
+        "D000036",
+        "D000110",
+        "D000204",
+        "D000209",
+        "D000248"
+      ],
+      "merchants_used": [
+        "M00004",
+        "M00157",
+        "M00224",
+        "M00248",
+        "M00254"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chandigarh",
+        "chennai",
+        "delhi"
+      ],
+      "high_risk_txn_count": 5,
+      "risk_score": 41.65
+    },
+    {
+      "customer_id": "C000811",
+      "total_transactions": 38,
+      "avg_amount": 781.5081578947368,
+      "max_amount": 3734.68,
+      "avg_fraud_probability": 0.41610263157894734,
+      "devices_used": [
+        "D000008",
+        "D000017",
+        "D000050",
+        "D000108",
+        "D000157"
+      ],
+      "merchants_used": [
+        "M00024",
+        "M00049",
+        "M00052",
+        "M00072",
+        "M00076"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chandigarh",
+        "chennai",
+        "delhi"
+      ],
+      "high_risk_txn_count": 6,
+      "risk_score": 41.61
+    },
+    {
+      "customer_id": "C002112",
+      "total_transactions": 38,
+      "avg_amount": 839.5039473684211,
+      "max_amount": 3667.05,
+      "avg_fraud_probability": 0.4159236842105263,
+      "devices_used": [
+        "D000010",
+        "D000020",
+        "D000182",
+        "D000194",
+        "D000216"
+      ],
+      "merchants_used": [
+        "M00046",
+        "M00072",
+        "M00083",
+        "M00107",
+        "M00120"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chandigarh",
+        "chennai",
+        "delhi"
+      ],
+      "high_risk_txn_count": 7,
+      "risk_score": 41.59
+    },
+    {
+      "customer_id": "C000160",
+      "total_transactions": 38,
+      "avg_amount": 987.3555263157896,
+      "max_amount": 4020.0,
+      "avg_fraud_probability": 0.41527631578947366,
+      "devices_used": [
+        "D000011",
+        "D000315",
+        "D000343",
+        "D000367",
+        "D000419"
+      ],
+      "merchants_used": [
+        "M00032",
+        "M00046",
+        "M00085",
+        "M00099",
+        "M00114"
+      ],
+      "locations_used": [
+        "ahmedabad",
+        "bengaluru",
+        "chandigarh",
+        "delhi",
+        "hyderabad"
+      ],
+      "high_risk_txn_count": 3,
+      "risk_score": 41.53
+    }
+  ],
+  "top_transactions": [
+    {
+      "transaction_id": "TX0031022",
+      "customer_id": "C000767",
+      "merchant_id": "M00261",
+      "device_id": "D001548",
+      "transaction_amount": "13129.09",
+      "transaction_timestamp": "2025-05-19 18:18:00",
+      "merchant_category": "travel",
+      "location": "delhi",
+      "payment_method": "wallet",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0093680",
+      "customer_id": "C000104",
+      "merchant_id": "M00149",
+      "device_id": "D001400",
+      "transaction_amount": "57757.0",
+      "transaction_timestamp": "2025-04-11 21:31:29",
+      "merchant_category": "online_retail",
+      "location": "kochi",
+      "payment_method": "credit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0067354",
+      "customer_id": "C002010",
+      "merchant_id": "M00550",
+      "device_id": "D001614",
+      "transaction_amount": "20963.6",
+      "transaction_timestamp": "2025-04-14 10:59:32",
+      "merchant_category": "entertainment",
+      "location": "lucknow",
+      "payment_method": "credit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0035044",
+      "customer_id": "C002267",
+      "merchant_id": "M00671",
+      "device_id": "D001542",
+      "transaction_amount": "15216.56",
+      "transaction_timestamp": "2025-04-27 08:02:00",
+      "merchant_category": "jewelry",
+      "location": "kolkata",
+      "payment_method": "net_banking",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0089641",
+      "customer_id": "C002205",
+      "merchant_id": "M00508",
+      "device_id": "D001584",
+      "transaction_amount": "14496.84",
+      "transaction_timestamp": "2025-01-24 20:34:00",
+      "merchant_category": "fuel",
+      "location": "hyderabad",
+      "payment_method": "credit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0021547",
+      "customer_id": "C001886",
+      "merchant_id": "M00382",
+      "device_id": "D001652",
+      "transaction_amount": "11690.86",
+      "transaction_timestamp": "2025-05-08 02:28:34",
+      "merchant_category": "online_retail",
+      "location": "lucknow",
+      "payment_method": "debit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0090815",
+      "customer_id": "C001890",
+      "merchant_id": "M00747",
+      "device_id": "D001437",
+      "transaction_amount": "25744.54",
+      "transaction_timestamp": "2025-03-08 15:49:00",
+      "merchant_category": "electronics",
+      "location": "chennai",
+      "payment_method": "wallet",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0043472",
+      "customer_id": "C000898",
+      "merchant_id": "M00160",
+      "device_id": "D000969",
+      "transaction_amount": "12339.0",
+      "transaction_timestamp": "2025-03-06 19:23:00",
+      "merchant_category": "fuel",
+      "location": "chandigarh",
+      "payment_method": "credit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0084144",
+      "customer_id": "C001297",
+      "merchant_id": "M00738",
+      "device_id": "D001352",
+      "transaction_amount": "13243.23",
+      "transaction_timestamp": "2025-06-01 22:29:13",
+      "merchant_category": "restaurant",
+      "location": "hyderabad",
+      "payment_method": "wallet",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0075643",
+      "customer_id": "C002331",
+      "merchant_id": "M00508",
+      "device_id": "D001339",
+      "transaction_amount": "16897.0",
+      "transaction_timestamp": "2025-07-01 17:29:52",
+      "merchant_category": "fuel",
+      "location": "pune",
+      "payment_method": "upi",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0070535",
+      "customer_id": "C001851",
+      "merchant_id": "M00729",
+      "device_id": "D001399",
+      "transaction_amount": "71848.0",
+      "transaction_timestamp": "2025-01-25 06:05:41",
+      "merchant_category": "online_retail",
+      "location": "kochi",
+      "payment_method": "upi",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0026507",
+      "customer_id": "C001403",
+      "merchant_id": "M00759",
+      "device_id": "D001466",
+      "transaction_amount": "27360.42",
+      "transaction_timestamp": "2025-04-07 23:00:00",
+      "merchant_category": "utilities",
+      "location": "kolkata",
+      "payment_method": "wallet",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0050529",
+      "customer_id": "C001317",
+      "merchant_id": "M00218",
+      "device_id": "D001441",
+      "transaction_amount": "17807.22",
+      "transaction_timestamp": "2025-01-25 03:31:53",
+      "merchant_category": "entertainment",
+      "location": "mumbai",
+      "payment_method": "wallet",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0007243",
+      "customer_id": "C001228",
+      "merchant_id": "M00475",
+      "device_id": "D000789",
+      "transaction_amount": "14387.0",
+      "transaction_timestamp": "2025-06-03 19:52:47",
+      "merchant_category": "healthcare",
+      "location": "jaipur",
+      "payment_method": "net_banking",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0063008",
+      "customer_id": "C001526",
+      "merchant_id": "M00810",
+      "device_id": "D001312",
+      "transaction_amount": "18866.25",
+      "transaction_timestamp": "2025-05-08 21:11:00",
+      "merchant_category": "entertainment",
+      "location": "kochi",
+      "payment_method": "debit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0036606",
+      "customer_id": "C001724",
+      "merchant_id": "M00051",
+      "device_id": "D001440",
+      "transaction_amount": "17485.91",
+      "transaction_timestamp": "2025-03-29 18:46:00",
+      "merchant_category": "jewelry",
+      "location": "chennai",
+      "payment_method": "credit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0048090",
+      "customer_id": "C000936",
+      "merchant_id": "M00758",
+      "device_id": "D001410",
+      "transaction_amount": "18478.11",
+      "transaction_timestamp": "2025-07-22 16:27:01",
+      "merchant_category": "online_retail",
+      "location": "pune",
+      "payment_method": "net_banking",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0002328",
+      "customer_id": "C002181",
+      "merchant_id": "M00447",
+      "device_id": "D001437",
+      "transaction_amount": "66142.14",
+      "transaction_timestamp": "2025-06-18 18:19:00",
+      "merchant_category": "utilities",
+      "location": "delhi",
+      "payment_method": "upi",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0005961",
+      "customer_id": "C001317",
+      "merchant_id": "M00329",
+      "device_id": "D001450",
+      "transaction_amount": "12087.17",
+      "transaction_timestamp": "2025-03-16 21:40:35",
+      "merchant_category": "fuel",
+      "location": "chennai",
+      "payment_method": "upi",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0019325",
+      "customer_id": "C001517",
+      "merchant_id": "M00804",
+      "device_id": "D001365",
+      "transaction_amount": "16033.0",
+      "transaction_timestamp": "2025-01-28 04:52:07",
+      "merchant_category": "entertainment",
+      "location": "hyderabad",
+      "payment_method": "credit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0047462",
+      "customer_id": "C000521",
+      "merchant_id": "M00783",
+      "device_id": "D000741",
+      "transaction_amount": "13092.0",
+      "transaction_timestamp": "2025-06-07 06:08:00",
+      "merchant_category": "restaurant",
+      "location": "pune",
+      "payment_method": "upi",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0097586",
+      "customer_id": "C001160",
+      "merchant_id": "M00495",
+      "device_id": "D001320",
+      "transaction_amount": "15678.0",
+      "transaction_timestamp": "2025-07-09 19:06:24",
+      "merchant_category": "entertainment",
+      "location": "bengaluru",
+      "payment_method": "debit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0070723",
+      "customer_id": "C002484",
+      "merchant_id": "M00534",
+      "device_id": "D001471",
+      "transaction_amount": "9619.81",
+      "transaction_timestamp": "2025-07-10 04:10:00",
+      "merchant_category": "grocery",
+      "location": "pune",
+      "payment_method": "net_banking",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0088452",
+      "customer_id": "C001958",
+      "merchant_id": "M00422",
+      "device_id": "D001407",
+      "transaction_amount": "10269.0",
+      "transaction_timestamp": "2025-06-08 23:30:20",
+      "merchant_category": "restaurant",
+      "location": "lucknow",
+      "payment_method": "credit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0092724",
+      "customer_id": "C001629",
+      "merchant_id": "M00362",
+      "device_id": "D001338",
+      "transaction_amount": "14256.82",
+      "transaction_timestamp": "2025-06-12 07:36:44",
+      "merchant_category": "grocery",
+      "location": "delhi",
+      "payment_method": "net_banking",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0068051",
+      "customer_id": "C002446",
+      "merchant_id": "M00206",
+      "device_id": "D001530",
+      "transaction_amount": "15405.82",
+      "transaction_timestamp": "2025-06-12 00:21:00",
+      "merchant_category": "electronics",
+      "location": "mumbai",
+      "payment_method": "debit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0098631",
+      "customer_id": "C000767",
+      "merchant_id": "M00236",
+      "device_id": "D001456",
+      "transaction_amount": "19178.79",
+      "transaction_timestamp": "2025-03-13 20:01:06",
+      "merchant_category": "restaurant",
+      "location": "kolkata",
+      "payment_method": "credit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0007216",
+      "customer_id": "C001701",
+      "merchant_id": "M00519",
+      "device_id": "D001392",
+      "transaction_amount": "11394.53",
+      "transaction_timestamp": "2025-02-11 00:53:00",
+      "merchant_category": "utilities",
+      "location": "chennai",
+      "payment_method": "net_banking",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0066751",
+      "customer_id": "C001365",
+      "merchant_id": "M00541",
+      "device_id": "D001505",
+      "transaction_amount": "13682.21",
+      "transaction_timestamp": "2025-07-29 11:42:00",
+      "merchant_category": "healthcare",
+      "location": "pune",
+      "payment_method": "net_banking",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0085197",
+      "customer_id": "C001689",
+      "merchant_id": "M00261",
+      "device_id": "D001395",
+      "transaction_amount": "9326.57",
+      "transaction_timestamp": "2025-01-07 00:50:53",
+      "merchant_category": "travel",
+      "location": "chandigarh",
+      "payment_method": "wallet",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0049829",
+      "customer_id": "C002185",
+      "merchant_id": "M00680",
+      "device_id": "D000538",
+      "transaction_amount": "15671.57",
+      "transaction_timestamp": "2025-02-11 19:41:46",
+      "merchant_category": "jewelry",
+      "location": "hyderabad",
+      "payment_method": "debit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0038188",
+      "customer_id": "C000727",
+      "merchant_id": "M00560",
+      "device_id": "D001367",
+      "transaction_amount": "18740.8",
+      "transaction_timestamp": "2025-03-20 21:13:00",
+      "merchant_category": "fuel",
+      "location": "ahmedabad",
+      "payment_method": "debit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0010881",
+      "customer_id": "C001778",
+      "merchant_id": "M00341",
+      "device_id": "D001276",
+      "transaction_amount": "17668.49",
+      "transaction_timestamp": "2025-05-18 01:13:00",
+      "merchant_category": "healthcare",
+      "location": "lucknow",
+      "payment_method": "debit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0032521",
+      "customer_id": "C002047",
+      "merchant_id": "M00821",
+      "device_id": "D001462",
+      "transaction_amount": "24491.74",
+      "transaction_timestamp": "2025-01-03 14:18:22",
+      "merchant_category": "fuel",
+      "location": "chandigarh",
+      "payment_method": "wallet",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0068818",
+      "customer_id": "C001594",
+      "merchant_id": "M00501",
+      "device_id": "D001250",
+      "transaction_amount": "30912.0",
+      "transaction_timestamp": "2025-06-10 16:53:50",
+      "merchant_category": "electronics",
+      "location": "delhi",
+      "payment_method": "credit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0020275",
+      "customer_id": "C000822",
+      "merchant_id": "M00222",
+      "device_id": "D001491",
+      "transaction_amount": "15854.0",
+      "transaction_timestamp": "2025-04-03 04:01:00",
+      "merchant_category": "electronics",
+      "location": "chennai",
+      "payment_method": "wallet",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0048133",
+      "customer_id": "C000857",
+      "merchant_id": "M00194",
+      "device_id": "D001656",
+      "transaction_amount": "10931.93",
+      "transaction_timestamp": "2025-07-14 04:54:40",
+      "merchant_category": "jewelry",
+      "location": "delhi",
+      "payment_method": "net_banking",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0007388",
+      "customer_id": "C001930",
+      "merchant_id": "M00063",
+      "device_id": "D001498",
+      "transaction_amount": "16623.98",
+      "transaction_timestamp": "2025-05-23 21:52:50",
+      "merchant_category": "fuel",
+      "location": "jaipur",
+      "payment_method": "net_banking",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0092616",
+      "customer_id": "C001289",
+      "merchant_id": "M00516",
+      "device_id": "D001586",
+      "transaction_amount": "21964.26",
+      "transaction_timestamp": "2025-04-18 00:35:53",
+      "merchant_category": "jewelry",
+      "location": "ahmedabad",
+      "payment_method": "net_banking",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0015198",
+      "customer_id": "C002089",
+      "merchant_id": "M00419",
+      "device_id": "D000697",
+      "transaction_amount": "12784.01",
+      "transaction_timestamp": "2025-02-05 09:47:54",
+      "merchant_category": "online_retail",
+      "location": "pune",
+      "payment_method": "debit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0007764",
+      "customer_id": "C001923",
+      "merchant_id": "M00031",
+      "device_id": "D001309",
+      "transaction_amount": "15118.0",
+      "transaction_timestamp": "2025-05-12 17:35:31",
+      "merchant_category": "fuel",
+      "location": "chennai",
+      "payment_method": "net_banking",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0052768",
+      "customer_id": "C002405",
+      "merchant_id": "M00596",
+      "device_id": "D001361",
+      "transaction_amount": "14458.17",
+      "transaction_timestamp": "2025-05-01 15:36:00",
+      "merchant_category": "utilities",
+      "location": "lucknow",
+      "payment_method": "wallet",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0051417",
+      "customer_id": "C001095",
+      "merchant_id": "M00097",
+      "device_id": "D000644",
+      "transaction_amount": "22492.25",
+      "transaction_timestamp": "2025-05-25 13:03:54",
+      "merchant_category": "travel",
+      "location": "ahmedabad",
+      "payment_method": "upi",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0099631",
+      "customer_id": "C002178",
+      "merchant_id": "M00776",
+      "device_id": "D001301",
+      "transaction_amount": "18676.8",
+      "transaction_timestamp": "2025-01-16 15:29:00",
+      "merchant_category": "entertainment",
+      "location": "ahmedabad",
+      "payment_method": "wallet",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0054704",
+      "customer_id": "C001195",
+      "merchant_id": "M00534",
+      "device_id": "D000723",
+      "transaction_amount": "14202.34",
+      "transaction_timestamp": "2025-06-10 04:27:00",
+      "merchant_category": "grocery",
+      "location": "mumbai",
+      "payment_method": "credit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0012564",
+      "customer_id": "C001567",
+      "merchant_id": "M00655",
+      "device_id": "D001342",
+      "transaction_amount": "14576.02",
+      "transaction_timestamp": "2025-04-04 08:18:07",
+      "merchant_category": "electronics",
+      "location": "mumbai",
+      "payment_method": "wallet",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0028672",
+      "customer_id": "C001854",
+      "merchant_id": "M00634",
+      "device_id": "D001320",
+      "transaction_amount": "15777.11",
+      "transaction_timestamp": "2025-01-03 16:11:00",
+      "merchant_category": "fuel",
+      "location": "pune",
+      "payment_method": "net_banking",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0050271",
+      "customer_id": "C002146",
+      "merchant_id": "M00034",
+      "device_id": "D001288",
+      "transaction_amount": "31734.63",
+      "transaction_timestamp": "2025-07-26 13:38:24",
+      "merchant_category": "online_retail",
+      "location": "pune",
+      "payment_method": "debit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0057131",
+      "customer_id": "C000582",
+      "merchant_id": "M00773",
+      "device_id": "D001527",
+      "transaction_amount": "13853.0",
+      "transaction_timestamp": "2025-04-10 01:52:28",
+      "merchant_category": "travel",
+      "location": "jaipur",
+      "payment_method": "net_banking",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0007477",
+      "customer_id": "C001107",
+      "merchant_id": "M00022",
+      "device_id": "D001629",
+      "transaction_amount": "14085.78",
+      "transaction_timestamp": "2025-04-29 07:09:00",
+      "merchant_category": "utilities",
+      "location": "ahmedabad",
+      "payment_method": "wallet",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0029026",
+      "customer_id": "C001518",
+      "merchant_id": "M00444",
+      "device_id": "D001367",
+      "transaction_amount": "9595.19",
+      "transaction_timestamp": "2025-06-11 03:51:54",
+      "merchant_category": "utilities",
+      "location": "pune",
+      "payment_method": "debit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0092305",
+      "customer_id": "C000321",
+      "merchant_id": "M00350",
+      "device_id": "D001457",
+      "transaction_amount": "11049.32",
+      "transaction_timestamp": "2025-06-19 01:41:04",
+      "merchant_category": "healthcare",
+      "location": "kolkata",
+      "payment_method": "upi",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0070634",
+      "customer_id": "C002409",
+      "merchant_id": "M00635",
+      "device_id": "D001386",
+      "transaction_amount": "24647.88",
+      "transaction_timestamp": "2025-04-20 15:19:54",
+      "merchant_category": "utilities",
+      "location": "chennai",
+      "payment_method": "wallet",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0088595",
+      "customer_id": "C002075",
+      "merchant_id": "M00476",
+      "device_id": "D001410",
+      "transaction_amount": "16971.0",
+      "transaction_timestamp": "2025-02-27 21:35:39",
+      "merchant_category": "travel",
+      "location": "chennai",
+      "payment_method": "net_banking",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0096100",
+      "customer_id": "C000423",
+      "merchant_id": "M00583",
+      "device_id": "D000260",
+      "transaction_amount": "14107.39",
+      "transaction_timestamp": "2025-04-14 22:51:43",
+      "merchant_category": "grocery",
+      "location": "chandigarh",
+      "payment_method": "net_banking",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0024196",
+      "customer_id": "C000718",
+      "merchant_id": "M00525",
+      "device_id": "D001279",
+      "transaction_amount": "25507.56",
+      "transaction_timestamp": "2025-04-28 21:45:16",
+      "merchant_category": "restaurant",
+      "location": "ahmedabad",
+      "payment_method": "debit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0093657",
+      "customer_id": "C002427",
+      "merchant_id": "M00539",
+      "device_id": "D000908",
+      "transaction_amount": "14981.18",
+      "transaction_timestamp": "2025-05-16 21:10:00",
+      "merchant_category": "travel",
+      "location": "chennai",
+      "payment_method": "credit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0091463",
+      "customer_id": "C000029",
+      "merchant_id": "M00309",
+      "device_id": "D001254",
+      "transaction_amount": "12957.54",
+      "transaction_timestamp": "2025-02-14 01:17:13",
+      "merchant_category": "fuel",
+      "location": "delhi",
+      "payment_method": "wallet",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0046557",
+      "customer_id": "C000743",
+      "merchant_id": "M00687",
+      "device_id": "D001206",
+      "transaction_amount": "14407.09",
+      "transaction_timestamp": "2025-04-28 21:33:00",
+      "merchant_category": "online_retail",
+      "location": "chandigarh",
+      "payment_method": "debit_card",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0090401",
+      "customer_id": "C001803",
+      "merchant_id": "M00398",
+      "device_id": "D001617",
+      "transaction_amount": "58145.0",
+      "transaction_timestamp": "2025-02-01 22:47:26",
+      "merchant_category": "utilities",
+      "location": "chandigarh",
+      "payment_method": "wallet",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0020195",
+      "customer_id": "C000678",
+      "merchant_id": "M00758",
+      "device_id": "D001419",
+      "transaction_amount": "13913.2",
+      "transaction_timestamp": "2025-02-01 22:53:59",
+      "merchant_category": "online_retail",
+      "location": "kolkata",
+      "payment_method": "upi",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0068875",
+      "customer_id": "C000435",
+      "merchant_id": "M00620",
+      "device_id": "D001549",
+      "transaction_amount": "12839.0",
+      "transaction_timestamp": "2025-04-28 21:22:57",
+      "merchant_category": "electronics",
+      "location": "kochi",
+      "payment_method": "upi",
+      "fraud_probability": "1.0",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0054302",
+      "customer_id": "C002200",
+      "merchant_id": "M00735",
+      "device_id": "D001418",
+      "transaction_amount": "8744.74",
+      "transaction_timestamp": "2025-04-12 04:43:00",
+      "merchant_category": "healthcare",
+      "location": "jaipur",
+      "payment_method": "upi",
+      "fraud_probability": "0.9999",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0076725",
+      "customer_id": "C002399",
+      "merchant_id": "M00221",
+      "device_id": "D001598",
+      "transaction_amount": "12712.24",
+      "transaction_timestamp": "2025-07-28 22:20:00",
+      "merchant_category": "electronics",
+      "location": "jaipur",
+      "payment_method": "upi",
+      "fraud_probability": "0.9999",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0089166",
+      "customer_id": "C001952",
+      "merchant_id": "M00746",
+      "device_id": "D001315",
+      "transaction_amount": "12322.66",
+      "transaction_timestamp": "2025-05-30 10:13:00",
+      "merchant_category": "grocery",
+      "location": "delhi",
+      "payment_method": "net_banking",
+      "fraud_probability": "0.9999",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0016002",
+      "customer_id": "C000410",
+      "merchant_id": "M00095",
+      "device_id": "D000151",
+      "transaction_amount": "12282.42",
+      "transaction_timestamp": "2025-04-07 11:53:47",
+      "merchant_category": "utilities",
+      "location": "bengaluru",
+      "payment_method": "net_banking",
+      "fraud_probability": "0.9999",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0061907",
+      "customer_id": "C000833",
+      "merchant_id": "M00243",
+      "device_id": "D000869",
+      "transaction_amount": "12242.67",
+      "transaction_timestamp": "2025-06-13 12:05:00",
+      "merchant_category": "entertainment",
+      "location": "ahmedabad",
+      "payment_method": "wallet",
+      "fraud_probability": "0.9999",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0039844",
+      "customer_id": "C001911",
+      "merchant_id": "M00817",
+      "device_id": "D001498",
+      "transaction_amount": "8369.76",
+      "transaction_timestamp": "2025-06-28 02:10:24",
+      "merchant_category": "grocery",
+      "location": "kochi",
+      "payment_method": "wallet",
+      "fraud_probability": "0.9999",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0058550",
+      "customer_id": "C000158",
+      "merchant_id": "M00597",
+      "device_id": "D001532",
+      "transaction_amount": "12573.34",
+      "transaction_timestamp": "2025-03-04 16:38:00",
+      "merchant_category": "healthcare",
+      "location": "mumbai",
+      "payment_method": "debit_card",
+      "fraud_probability": "0.9999",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0042684",
+      "customer_id": "C000184",
+      "merchant_id": "M00734",
+      "device_id": "D001402",
+      "transaction_amount": "12750.48",
+      "transaction_timestamp": "2025-05-16 17:35:49",
+      "merchant_category": "grocery",
+      "location": "hyderabad",
+      "payment_method": "debit_card",
+      "fraud_probability": "0.9999",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0044417",
+      "customer_id": "C002045",
+      "merchant_id": "M00517",
+      "device_id": "D000121",
+      "transaction_amount": "11236.52",
+      "transaction_timestamp": "2025-01-20 14:48:00",
+      "merchant_category": "electronics",
+      "location": "lucknow",
+      "payment_method": "wallet",
+      "fraud_probability": "0.9998",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0011057",
+      "customer_id": "C002217",
+      "merchant_id": "M00119",
+      "device_id": "D001330",
+      "transaction_amount": "8009.65",
+      "transaction_timestamp": "2025-05-04 02:54:27",
+      "merchant_category": "jewelry",
+      "location": "jaipur",
+      "payment_method": "debit_card",
+      "fraud_probability": "0.9998",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0036056",
+      "customer_id": "C000293",
+      "merchant_id": "M00509",
+      "device_id": "D001505",
+      "transaction_amount": "7591.0",
+      "transaction_timestamp": "2025-03-31 02:58:58",
+      "merchant_category": "restaurant",
+      "location": "pune",
+      "payment_method": "credit_card",
+      "fraud_probability": "0.9998",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0021774",
+      "customer_id": "C002139",
+      "merchant_id": "M00402",
+      "device_id": "D001259",
+      "transaction_amount": "7327.62",
+      "transaction_timestamp": "2025-03-23 02:10:00",
+      "merchant_category": "travel",
+      "location": "chennai",
+      "payment_method": "wallet",
+      "fraud_probability": "0.9998",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0039815",
+      "customer_id": "C001669",
+      "merchant_id": "M00608",
+      "device_id": "D001255",
+      "transaction_amount": "8283.74",
+      "transaction_timestamp": "2025-02-11 03:55:43",
+      "merchant_category": "online_retail",
+      "location": "kolkata",
+      "payment_method": "credit_card",
+      "fraud_probability": "0.9998",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0035734",
+      "customer_id": "C001062",
+      "merchant_id": "M00590",
+      "device_id": "D000293",
+      "transaction_amount": "10889.62",
+      "transaction_timestamp": "2025-04-04 22:25:44",
+      "merchant_category": "utilities",
+      "location": "kolkata",
+      "payment_method": "credit_card",
+      "fraud_probability": "0.9998",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0072161",
+      "customer_id": "C001985",
+      "merchant_id": "M00070",
+      "device_id": "D001612",
+      "transaction_amount": "8113.0",
+      "transaction_timestamp": "2025-01-19 00:22:12",
+      "merchant_category": "fuel",
+      "location": "lucknow",
+      "payment_method": "upi",
+      "fraud_probability": "0.9998",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0002320",
+      "customer_id": "C000869",
+      "merchant_id": "M00524",
+      "device_id": "D001338",
+      "transaction_amount": "7955.0",
+      "transaction_timestamp": "2025-07-24 01:44:00",
+      "merchant_category": "utilities",
+      "location": "mumbai",
+      "payment_method": "wallet",
+      "fraud_probability": "0.9998",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0009234",
+      "customer_id": "C000633",
+      "merchant_id": "M00476",
+      "device_id": "D000159",
+      "transaction_amount": "11383.0",
+      "transaction_timestamp": "2025-05-30 16:49:32",
+      "merchant_category": "travel",
+      "location": "mumbai",
+      "payment_method": "upi",
+      "fraud_probability": "0.9998",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0072889",
+      "customer_id": "C001351",
+      "merchant_id": "M00389",
+      "device_id": "D001309",
+      "transaction_amount": "10692.0",
+      "transaction_timestamp": "2025-04-21 07:16:09",
+      "merchant_category": "fuel",
+      "location": "mumbai",
+      "payment_method": "net_banking",
+      "fraud_probability": "0.9998",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0094835",
+      "customer_id": "C000291",
+      "merchant_id": "M00348",
+      "device_id": "D001467",
+      "transaction_amount": "10241.37",
+      "transaction_timestamp": "2025-05-02 13:18:01",
+      "merchant_category": "electronics",
+      "location": "jaipur",
+      "payment_method": "wallet",
+      "fraud_probability": "0.9998",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0051904",
+      "customer_id": "C001183",
+      "merchant_id": "M00310",
+      "device_id": "D001609",
+      "transaction_amount": "6546.67",
+      "transaction_timestamp": "2025-01-07 04:45:00",
+      "merchant_category": "restaurant",
+      "location": "hyderabad",
+      "payment_method": "wallet",
+      "fraud_probability": "0.9997",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0007555",
+      "customer_id": "C000630",
+      "merchant_id": "M00125",
+      "device_id": "D001270",
+      "transaction_amount": "10935.57",
+      "transaction_timestamp": "2025-05-14 13:13:52",
+      "merchant_category": "healthcare",
+      "location": "delhi",
+      "payment_method": "debit_card",
+      "fraud_probability": "0.9997",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0044168",
+      "customer_id": "C001202",
+      "merchant_id": "M00560",
+      "device_id": "D001252",
+      "transaction_amount": "10866.0",
+      "transaction_timestamp": "2025-04-14 20:24:28",
+      "merchant_category": "fuel",
+      "location": "kolkata",
+      "payment_method": "debit_card",
+      "fraud_probability": "0.9996",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0052701",
+      "customer_id": "C000358",
+      "merchant_id": "M00591",
+      "device_id": "D001621",
+      "transaction_amount": "10702.0",
+      "transaction_timestamp": "2025-02-16 21:29:24",
+      "merchant_category": "entertainment",
+      "location": "ahmedabad",
+      "payment_method": "upi",
+      "fraud_probability": "0.9996",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0067887",
+      "customer_id": "C000266",
+      "merchant_id": "M00098",
+      "device_id": "D001347",
+      "transaction_amount": "10459.0",
+      "transaction_timestamp": "2025-01-23 09:45:44",
+      "merchant_category": "fuel",
+      "location": "hyderabad",
+      "payment_method": "net_banking",
+      "fraud_probability": "0.9996",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0096058",
+      "customer_id": "C002284",
+      "merchant_id": "M00603",
+      "device_id": "D000519",
+      "transaction_amount": "9971.5",
+      "transaction_timestamp": "2025-04-02 14:03:00",
+      "merchant_category": "fuel",
+      "location": "kolkata",
+      "payment_method": "upi",
+      "fraud_probability": "0.9996",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0024677",
+      "customer_id": "C002031",
+      "merchant_id": "M00778",
+      "device_id": "D000761",
+      "transaction_amount": "10388.51",
+      "transaction_timestamp": "2025-02-14 21:12:13",
+      "merchant_category": "jewelry",
+      "location": "chandigarh",
+      "payment_method": "wallet",
+      "fraud_probability": "0.9996",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0014921",
+      "customer_id": "C000374",
+      "merchant_id": "M00362",
+      "device_id": "D001608",
+      "transaction_amount": "9901.69",
+      "transaction_timestamp": "2025-03-01 10:36:00",
+      "merchant_category": "grocery",
+      "location": "kolkata",
+      "payment_method": "credit_card",
+      "fraud_probability": "0.9995",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0063010",
+      "customer_id": "C001963",
+      "merchant_id": "M00458",
+      "device_id": "D001570",
+      "transaction_amount": "10038.58",
+      "transaction_timestamp": "2025-07-11 21:10:55",
+      "merchant_category": "healthcare",
+      "location": "lucknow",
+      "payment_method": "debit_card",
+      "fraud_probability": "0.9995",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0048263",
+      "customer_id": "C000907",
+      "merchant_id": "M00306",
+      "device_id": "D001357",
+      "transaction_amount": "10284.11",
+      "transaction_timestamp": "2025-06-06 19:38:11",
+      "merchant_category": "jewelry",
+      "location": "pune",
+      "payment_method": "debit_card",
+      "fraud_probability": "0.9995",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0075543",
+      "customer_id": "C001155",
+      "merchant_id": "M00193",
+      "device_id": "D000187",
+      "transaction_amount": "10220.92",
+      "transaction_timestamp": "2025-06-19 19:45:00",
+      "merchant_category": "grocery",
+      "location": "lucknow",
+      "payment_method": "upi",
+      "fraud_probability": "0.9995",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0066622",
+      "customer_id": "C000985",
+      "merchant_id": "M00075",
+      "device_id": "D000945",
+      "transaction_amount": "10032.45",
+      "transaction_timestamp": "2025-07-07 13:46:00",
+      "merchant_category": "restaurant",
+      "location": "delhi",
+      "payment_method": "net_banking",
+      "fraud_probability": "0.9995",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0059131",
+      "customer_id": "C000050",
+      "merchant_id": "M00080",
+      "device_id": "D001313",
+      "transaction_amount": "10010.72",
+      "transaction_timestamp": "2025-02-02 20:38:00",
+      "merchant_category": "healthcare",
+      "location": "hyderabad",
+      "payment_method": "wallet",
+      "fraud_probability": "0.9994",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0036348",
+      "customer_id": "C000789",
+      "merchant_id": "M00764",
+      "device_id": "D001341",
+      "transaction_amount": "10068.25",
+      "transaction_timestamp": "2025-05-24 17:40:00",
+      "merchant_category": "fuel",
+      "location": "jaipur",
+      "payment_method": "upi",
+      "fraud_probability": "0.9994",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0023984",
+      "customer_id": "C000266",
+      "merchant_id": "M00696",
+      "device_id": "D001251",
+      "transaction_amount": "6753.35",
+      "transaction_timestamp": "2025-04-06 00:02:59",
+      "merchant_category": "online_retail",
+      "location": "kolkata",
+      "payment_method": "wallet",
+      "fraud_probability": "0.9994",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0078857",
+      "customer_id": "C001551",
+      "merchant_id": "M00002",
+      "device_id": "D000271",
+      "transaction_amount": "10492.0",
+      "transaction_timestamp": "2025-02-02 10:40:00",
+      "merchant_category": "fuel",
+      "location": "pune",
+      "payment_method": "upi",
+      "fraud_probability": "0.9994",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0047494",
+      "customer_id": "C002277",
+      "merchant_id": "M00479",
+      "device_id": "D000680",
+      "transaction_amount": "9557.61",
+      "transaction_timestamp": "2025-03-05 16:59:41",
+      "merchant_category": "utilities",
+      "location": "delhi",
+      "payment_method": "debit_card",
+      "fraud_probability": "0.9994",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0088527",
+      "customer_id": "C001647",
+      "merchant_id": "M00095",
+      "device_id": "D001648",
+      "transaction_amount": "10590.83",
+      "transaction_timestamp": "2025-02-13 11:42:22",
+      "merchant_category": "utilities",
+      "location": "chandigarh",
+      "payment_method": "debit_card",
+      "fraud_probability": "0.9994",
+      "risk_level": "HIGH"
+    },
+    {
+      "transaction_id": "TX0090683",
+      "customer_id": "C001019",
+      "merchant_id": "M00314",
+      "device_id": "D000746",
+      "transaction_amount": "9756.0",
+      "transaction_timestamp": "2025-07-06 11:26:00",
+      "merchant_category": "utilities",
+      "location": "mumbai",
+      "payment_method": "net_banking",
+      "fraud_probability": "0.9994",
+      "risk_level": "HIGH"
+    }
+  ],
+  "top_alerts": [
+    {
+      "alert_id": "AL000000",
+      "transaction_id": "TX0031022",
+      "customer_id": "C000767",
+      "merchant_id": "M00261",
+      "device_id": "D001548",
+      "amount": 13129.09,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000001",
+      "transaction_id": "TX0093680",
+      "customer_id": "C000104",
+      "merchant_id": "M00149",
+      "device_id": "D001400",
+      "amount": 57757.0,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000002",
+      "transaction_id": "TX0067354",
+      "customer_id": "C002010",
+      "merchant_id": "M00550",
+      "device_id": "D001614",
+      "amount": 20963.6,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000003",
+      "transaction_id": "TX0035044",
+      "customer_id": "C002267",
+      "merchant_id": "M00671",
+      "device_id": "D001542",
+      "amount": 15216.56,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000004",
+      "transaction_id": "TX0089641",
+      "customer_id": "C002205",
+      "merchant_id": "M00508",
+      "device_id": "D001584",
+      "amount": 14496.84,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000005",
+      "transaction_id": "TX0021547",
+      "customer_id": "C001886",
+      "merchant_id": "M00382",
+      "device_id": "D001652",
+      "amount": 11690.86,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Transaction occurred late at night / early morning",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000006",
+      "transaction_id": "TX0090815",
+      "customer_id": "C001890",
+      "merchant_id": "M00747",
+      "device_id": "D001437",
+      "amount": 25744.54,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000007",
+      "transaction_id": "TX0043472",
+      "customer_id": "C000898",
+      "merchant_id": "M00160",
+      "device_id": "D000969",
+      "amount": 12339.0,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000008",
+      "transaction_id": "TX0084144",
+      "customer_id": "C001297",
+      "merchant_id": "M00738",
+      "device_id": "D001352",
+      "amount": 13243.23,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000009",
+      "transaction_id": "TX0075643",
+      "customer_id": "C002331",
+      "merchant_id": "M00508",
+      "device_id": "D001339",
+      "amount": 16897.0,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000010",
+      "transaction_id": "TX0070535",
+      "customer_id": "C001851",
+      "merchant_id": "M00729",
+      "device_id": "D001399",
+      "amount": 71848.0,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000011",
+      "transaction_id": "TX0026507",
+      "customer_id": "C001403",
+      "merchant_id": "M00759",
+      "device_id": "D001466",
+      "amount": 27360.42,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Transaction occurred late at night / early morning",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000012",
+      "transaction_id": "TX0050529",
+      "customer_id": "C001317",
+      "merchant_id": "M00218",
+      "device_id": "D001441",
+      "amount": 17807.22,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Transaction occurred late at night / early morning",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000013",
+      "transaction_id": "TX0007243",
+      "customer_id": "C001228",
+      "merchant_id": "M00475",
+      "device_id": "D000789",
+      "amount": 14387.0,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000014",
+      "transaction_id": "TX0063008",
+      "customer_id": "C001526",
+      "merchant_id": "M00810",
+      "device_id": "D001312",
+      "amount": 18866.25,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000015",
+      "transaction_id": "TX0036606",
+      "customer_id": "C001724",
+      "merchant_id": "M00051",
+      "device_id": "D001440",
+      "amount": 17485.91,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000016",
+      "transaction_id": "TX0048090",
+      "customer_id": "C000936",
+      "merchant_id": "M00758",
+      "device_id": "D001410",
+      "amount": 18478.11,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000017",
+      "transaction_id": "TX0002328",
+      "customer_id": "C002181",
+      "merchant_id": "M00447",
+      "device_id": "D001437",
+      "amount": 66142.14,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000018",
+      "transaction_id": "TX0005961",
+      "customer_id": "C001317",
+      "merchant_id": "M00329",
+      "device_id": "D001450",
+      "amount": 12087.17,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000019",
+      "transaction_id": "TX0019325",
+      "customer_id": "C001517",
+      "merchant_id": "M00804",
+      "device_id": "D001365",
+      "amount": 16033.0,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Transaction occurred late at night / early morning",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000020",
+      "transaction_id": "TX0047462",
+      "customer_id": "C000521",
+      "merchant_id": "M00783",
+      "device_id": "D000741",
+      "amount": 13092.0,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000021",
+      "transaction_id": "TX0097586",
+      "customer_id": "C001160",
+      "merchant_id": "M00495",
+      "device_id": "D001320",
+      "amount": 15678.0,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000022",
+      "transaction_id": "TX0070723",
+      "customer_id": "C002484",
+      "merchant_id": "M00534",
+      "device_id": "D001471",
+      "amount": 9619.81,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Transaction occurred late at night / early morning",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000023",
+      "transaction_id": "TX0088452",
+      "customer_id": "C001958",
+      "merchant_id": "M00422",
+      "device_id": "D001407",
+      "amount": 10269.0,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Transaction occurred late at night / early morning",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000024",
+      "transaction_id": "TX0092724",
+      "customer_id": "C001629",
+      "merchant_id": "M00362",
+      "device_id": "D001338",
+      "amount": 14256.82,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000025",
+      "transaction_id": "TX0068051",
+      "customer_id": "C002446",
+      "merchant_id": "M00206",
+      "device_id": "D001530",
+      "amount": 15405.82,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Transaction occurred late at night / early morning",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000026",
+      "transaction_id": "TX0098631",
+      "customer_id": "C000767",
+      "merchant_id": "M00236",
+      "device_id": "D001456",
+      "amount": 19178.79,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000027",
+      "transaction_id": "TX0007216",
+      "customer_id": "C001701",
+      "merchant_id": "M00519",
+      "device_id": "D001392",
+      "amount": 11394.53,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Transaction occurred late at night / early morning",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000028",
+      "transaction_id": "TX0066751",
+      "customer_id": "C001365",
+      "merchant_id": "M00541",
+      "device_id": "D001505",
+      "amount": 13682.21,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000029",
+      "transaction_id": "TX0085197",
+      "customer_id": "C001689",
+      "merchant_id": "M00261",
+      "device_id": "D001395",
+      "amount": 9326.57,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Transaction occurred late at night / early morning",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000030",
+      "transaction_id": "TX0049829",
+      "customer_id": "C002185",
+      "merchant_id": "M00680",
+      "device_id": "D000538",
+      "amount": 15671.57,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000031",
+      "transaction_id": "TX0038188",
+      "customer_id": "C000727",
+      "merchant_id": "M00560",
+      "device_id": "D001367",
+      "amount": 18740.8,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000032",
+      "transaction_id": "TX0010881",
+      "customer_id": "C001778",
+      "merchant_id": "M00341",
+      "device_id": "D001276",
+      "amount": 17668.49,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Transaction occurred late at night / early morning",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000033",
+      "transaction_id": "TX0032521",
+      "customer_id": "C002047",
+      "merchant_id": "M00821",
+      "device_id": "D001462",
+      "amount": 24491.74,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000034",
+      "transaction_id": "TX0068818",
+      "customer_id": "C001594",
+      "merchant_id": "M00501",
+      "device_id": "D001250",
+      "amount": 30912.0,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000035",
+      "transaction_id": "TX0020275",
+      "customer_id": "C000822",
+      "merchant_id": "M00222",
+      "device_id": "D001491",
+      "amount": 15854.0,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Transaction occurred late at night / early morning",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000036",
+      "transaction_id": "TX0048133",
+      "customer_id": "C000857",
+      "merchant_id": "M00194",
+      "device_id": "D001656",
+      "amount": 10931.93,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Transaction occurred late at night / early morning",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000037",
+      "transaction_id": "TX0007388",
+      "customer_id": "C001930",
+      "merchant_id": "M00063",
+      "device_id": "D001498",
+      "amount": 16623.98,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000038",
+      "transaction_id": "TX0092616",
+      "customer_id": "C001289",
+      "merchant_id": "M00516",
+      "device_id": "D001586",
+      "amount": 21964.26,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Transaction occurred late at night / early morning",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000039",
+      "transaction_id": "TX0015198",
+      "customer_id": "C002089",
+      "merchant_id": "M00419",
+      "device_id": "D000697",
+      "amount": 12784.01,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000040",
+      "transaction_id": "TX0007764",
+      "customer_id": "C001923",
+      "merchant_id": "M00031",
+      "device_id": "D001309",
+      "amount": 15118.0,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000041",
+      "transaction_id": "TX0052768",
+      "customer_id": "C002405",
+      "merchant_id": "M00596",
+      "device_id": "D001361",
+      "amount": 14458.17,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000042",
+      "transaction_id": "TX0051417",
+      "customer_id": "C001095",
+      "merchant_id": "M00097",
+      "device_id": "D000644",
+      "amount": 22492.25,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000043",
+      "transaction_id": "TX0099631",
+      "customer_id": "C002178",
+      "merchant_id": "M00776",
+      "device_id": "D001301",
+      "amount": 18676.8,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000044",
+      "transaction_id": "TX0054704",
+      "customer_id": "C001195",
+      "merchant_id": "M00534",
+      "device_id": "D000723",
+      "amount": 14202.34,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Transaction occurred late at night / early morning",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000045",
+      "transaction_id": "TX0012564",
+      "customer_id": "C001567",
+      "merchant_id": "M00655",
+      "device_id": "D001342",
+      "amount": 14576.02,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000046",
+      "transaction_id": "TX0028672",
+      "customer_id": "C001854",
+      "merchant_id": "M00634",
+      "device_id": "D001320",
+      "amount": 15777.11,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000047",
+      "transaction_id": "TX0050271",
+      "customer_id": "C002146",
+      "merchant_id": "M00034",
+      "device_id": "D001288",
+      "amount": 31734.63,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000048",
+      "transaction_id": "TX0057131",
+      "customer_id": "C000582",
+      "merchant_id": "M00773",
+      "device_id": "D001527",
+      "amount": 13853.0,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Transaction occurred late at night / early morning",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    },
+    {
+      "alert_id": "AL000049",
+      "transaction_id": "TX0007477",
+      "customer_id": "C001107",
+      "merchant_id": "M00022",
+      "device_id": "D001629",
+      "amount": 14085.78,
+      "fraud_probability": 1.0,
+      "risk_level": "HIGH",
+      "contributing_factors": [
+        "Transaction amount far above this customer's usual average",
+        "Device has been used by an unusually high number of customers",
+        "Customer's location has been changing frequently",
+        "Customer has used an unusually high number of locations"
+      ],
+      "status": "OPEN",
+      "alert_type": "FRAUD_RISK"
+    }
+  ]
+}

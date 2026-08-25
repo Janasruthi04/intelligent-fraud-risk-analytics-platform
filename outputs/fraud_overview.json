@@ -1,0 +1,10 @@
+{
+  "total_transactions": 99301,
+  "fraud_transactions": 5659,
+  "fraud_rate_pct": 5.699,
+  "high_risk_transactions": 5659,
+  "medium_risk_transactions": 46332,
+  "low_risk_transactions": 47310,
+  "average_transaction_amount": 698.35,
+  "total_risk_alerts": 500
+}
